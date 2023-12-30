@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapMaven</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        #image1{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            background-color: #7149155f;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #dialoguebox{
+            border: 3px dashed;
+            border-top: 5px solid;
+            border-radius: 90px;
+            position: relative;
+            width: 900px;
+            height: 300px;
+            background-color: #171a31bf;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.594);
+        }
+
+        .container {
+            width: 600px;
+            font-size: 23px;
+            color: #f8f8f8;
+        }
+
+        button{
+            
+            size: 50px;
+        }
+
+        .choix {
+            position: absolute;
+            display: flex;
+        }
+
+        .ch{
+            height: 500px;
+            width: 300px;
+            background-color: #171a31;
+            margin: 30px;
+            border: 3px dashed wheat;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+        }
+
+        .intro {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.649);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #hide{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        #next {
+            position: fixed;
+            top: 70%;
+            height: 40px;
+            width: 150px;
+            font-size: larger;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 900;
+            border-radius: 30px;
+            border-color: wheat;
+            background-color: #171a31;
+            color: wheat;
+            cursor: pointer;
+        }
+
+        .imgs {
+            width: 250px;
+            height: 250px;
+            transition: 0.3s ease;
+        }
+
+        .divs{
+            text-decoration: underline;
+            font-weight: bolder;
+            font-size: 25pt;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            transition: 0.3s ease;
+        }
+
+        .ch:hover {
+            height: 530px;
+            width: 330px;
+        }
+
+        .ch:hover .divs {
+            font-weight: bolder;
+            font-size: 30pt;
+        }
+
+        .ch:hover .imgs {
+            width: 280px;
+            height: 280px;
+        }
+    </style>
+</head>
+<body>
+    <img src="7timal.jpg" id="image1">
+    <div class="content">
+        <div class="choix">
+            <a href="flags.html"><div class="ch"><p class="divs">Flags</p><img src="flags.png" class="imgs"></div></a>
+            <a href="capitals.html"><div class="ch"><p class="divs">Capitals</p><img src="capitals.png" class="imgs"></div></a>
+            <a href="landmarks.html"><div class="ch"><p class="divs">Landmark</p><img src="landmarks.png" class="imgs"></div></a>
+        </div>
+        <div id="hide">
+            <div class="intro">
+                <div id="dialoguebox">
+                    <div class="container">
+                        <h3 id="welcome">🌍 Welcome to MapMaven! 🌍</h3>
+                        <p class="greating" id="introduction">Dive into the world of geography with us, where excitement and discovery await. Uncover the beauty of flags, test your knowledge of capitals, or explore iconic landmarks. MapMaven is your playground for geographical exploration, whether you're a seasoned enthusiast or a newcomer</p>
+                    </div>
+                    <button id="next" onclick="hide()"> NEXT </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        x=0;
+        function hide(){
+            if(x===0){
+                var intro=document.getElementById('introduction');
+                var welcome=document.getElementById('welcome');
+                var next=document.getElementById('next');
+                intro.innerHTML='Click "Start" to choose your adventure and immerse yourself in a captivating journey of maps and knowledge. Let the games begin, and enjoy the thrill of discovering the world at your fingertips! 🗺️✨';
+                welcome.style.display='none';
+                next.innerHTML='START';
+            } else {
+                var hide=document.getElementById('hide');
+                hide.style.display='none';
+            }
+            x++;
+        }
+    </script>
+</body>
+</html>
+
+        
