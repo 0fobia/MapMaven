@@ -33,6 +33,47 @@
             justify-content: center;
         }
 
+        .menu{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar{
+            background-color: #171a31;
+            border: 2px solid white;
+            font-family: 'Courier New', Courier, monospace;
+            display: none;
+        }
+
+        li{
+            margin: 5px;
+            border-top: 0.4px solid rgba(255, 255, 255, 0.29);
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        li:hover {
+            background-color: #b7b2ef;
+        }
+
+        .menubutton{
+            background-color: #171a31;
+            color: white;
+            cursor: pointer;
+        }
+
         .intro {
             position: relative;
             background-color: rgba(0, 0, 0, 0.649);
@@ -110,48 +151,7 @@
             background-color: #b7b2ef;
         }
 
-        .menu{
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 10px;
-        }
-
-        ul{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar{
-            background-color: #171a31;
-            border: 2px solid white;
-            font-family: 'Courier New', Courier, monospace;
-            display: none;
-        }
-
-        li{
-            margin: 5px;
-            border-top: 0.4px solid rgba(255, 255, 255, 0.29);
-            display: block;
-        }
-
-        a{
-            text-decoration: none;
-            color: white;
-        }
-
-        li:hover {
-            background-color: #b7b2ef;
-        }
-
-        .menubutton{
-            background-color: #171a31;
-            color: white;
-            cursor: pointer;
-        }
-
-        h1{
+        #capitalchoosen{
             font-size: 50pt;
             font-weight: bolder;
             color: #0d0730;
@@ -164,7 +164,7 @@
         }
 
         .flag {
-            width: 180px;
+            width: 150px;
         }
 
         .click {
@@ -212,22 +212,22 @@
             </div>
         </div>
         <div>
-            <h1 id="flagchoosen">Senegal</h1>
+            <h1 id="capitalchoosen">Beijing</h1>
             <div class="flags">
-                <button onclick="check0()" class="click" id="0"><img src="Senegal1.png" class="flag" id="flag0"></button>
-                <button onclick="check1()" class="click" id="1"><img src="Tanzania1.png" class="flag" id="flag1"></button>
-                <button onclick="check2()" class="click" id="2"><img src="Uruguay1.png" class="flag" id="flag2"></button>
+                <button onclick="check0()" class="click" id="0" name="abc"><img src="Moscow.png" class="flag" id="flag0"></button>
+                <button onclick="check1()" class="click" id="1" name="abc"><img src="New Delhi.png" class="flag" id="flag1"></button>
+                <button onclick="check2()" class="click" id="2" name="abc"><img src="Beijing.png" class="flag" id="flag2"></button>
             </div>
         </div>
         <div id="hide">
             <div class="intro">
                 <div id="dialoguebox">
                     <div class="container">
-                        <h3 class="welcome">Congratulations on completing the flag guessing game!!🎉 your score is:</h3>
+                        <h3 class="welcome">Congratulations on completing the capitals guessing game!!🎉 your score is:</h3>
                         <h2 id="score" ></h2>
                     </div>
-                    <div class="buttons">
-                        <button id="next"><a href="flags.html"> Replay </a></button>
+                    <div>
+                        <button id="next"><a href="capitals.html"> Replay </a></button>
                         <button id="change"><a href="game-page.html"> Change game </a></button>
                     </div>
                 </div>
@@ -235,7 +235,6 @@
         </div>
     </div>
     <script>
-        var som=0;
         var menuu=document.getElementById('navbar');
         function menu(){
             if (menuu.style.display === 'none') {
@@ -244,11 +243,11 @@
                 menuu.style.display = 'none';
             }
         }
-
-        var names=['Senegal','Morocco','Palestine','Qatar','Vietnam','Poland','United-kingdom','Argentina','Belgium','Canada','China','France','Germany','India','Iran','Italy','Japan','Monaco','Niger','Russia','South-africa','Sudan','Switzerland','Tanzania','Turkey','United-arab-emirates','United-states','Uruguay','Yemen'];
+        var names=['Beijing','Madrid','Rabat','Jerusalem','Paris','Warsaw','London','Buenos Aires','Brussels','Ottawa','Rome','Hanoi','Berlin','New Delhi','Tehran','Doha','Tokyo','Monaco','Niamey','Moscow','Pretoria','Khartoum','Bern','Dodoma','Ankara','Abu Dhabi','Washington','Montevideo','Sana\'a','Dakar'];
         var x=0;
         var L=names.length;
-        var t=0
+        var t=0;
+        var som=0;
 
         function next(){
             for(i=0;i<3;i++){
@@ -269,13 +268,13 @@
                 }
                 
                 
-                var choosenname = document.getElementById('flagchoosen');
+                var choosenname = document.getElementById('capitalchoosen');
                 var choosenflag = document.getElementById('flag' + y);
                 var f1=document.getElementById('flag'+n);
                 var f2=document.getElementById('flag'+o);
                 
                 choosenname.innerHTML = names[x];
-                choosenflag.src = names[x] + '1.png';
+                choosenflag.src = names[x] + '.png';
                 
                 
                 var r=Math.floor(Math.random()*L/2);
@@ -294,15 +293,15 @@
                     } else { m=r*2; }
                 }
                 
-                f1.src= names[r] + '1.png';
-                f2.src= names[m] + '1.png';
+                f1.src= names[r] + '.png';
+                f2.src= names[m] + '.png';
                 t=t+1;
             }
             if(t==10){
                 var blok=document.getElementById('hide');
                 blok.style.display='block';
                 var score=document.getElementById('score');
-                sco=som+'/10';
+                var sco=som+'/10';
                 sco=sco.toString();
                 score.innerHTML=sco;
             }
