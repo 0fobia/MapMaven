@@ -23,7 +23,7 @@
         }
 
         .content {
-            position: fixed;
+            position: relative;
             background-color: #7149155f;
             width: 100%;
             height: 100%;
@@ -31,6 +31,83 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        .intro {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.649);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #hide{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        #dialoguebox{
+            border: 3px dashed;
+            border-top: 5px solid;
+            border-radius: 90px;
+            position: relative;
+            width: 800px;
+            height: fit-content;
+            background-color: #171a31bf;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.594);
+        }
+
+        .container {
+            width: 600px;
+            font-size: 23px;
+            color: #f8f8f8;
+        }
+
+        #next {
+            top: 70%;
+            height: 40px;
+            width: fit-content;
+            font-size: large;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 900;
+            border-radius: 30px;
+            border-color: wheat;
+            background-color: #171a31;
+            color: wheat;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-right: 60px;
+        }
+
+        #change {
+            top: 70%;
+            height: 40px;
+            width: fit-content;
+            font-size: large;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 900;
+            border-radius: 30px;
+            border-color: wheat;
+            background-color: #171a31;
+            color: wheat;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-left: 60px;
+        }
+
+        #next:hover{
+            background-color: #b7b2ef;
+        }
+
+        #change:hover{
+            background-color: #b7b2ef;
         }
 
         .menu{
@@ -74,86 +151,7 @@
             cursor: pointer;
         }
 
-        .intro {
-            position: relative;
-            background-color: rgba(0, 0, 0, 0.649);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #hide{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-        
-        #dialoguebox{
-            border: 3px dashed;
-            border-top: 5px solid;
-            border-radius: 90px;
-            position: relative;
-            width: 900px;
-            height: 300px;
-            background-color: #171a31bf;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.594);
-        }
-
-        .container {
-            width: 600px;
-            font-size: 23px;
-            color: #f8f8f8;
-        }
-
-        #next {
-            position: fixed;
-            top: 70%;
-            height: 40px;
-            width: 150px;
-            left: 30%;
-            font-size: larger;
-            font-family:'Courier New', Courier, monospace;
-            font-weight: 900;
-            border-radius: 30px;
-            border-color: wheat;
-            background-color: #171a31;
-            color: wheat;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        #change {
-            position: fixed;
-            top: 70%;
-            height: 40px;
-            width: 150px;
-            left: 60%;
-            font-size: larger;
-            font-family:'Courier New', Courier, monospace;
-            font-weight: 900;
-            border-radius: 30px;
-            border-color: wheat;
-            background-color: #171a31;
-            color: wheat;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        #next:hover{
-            background-color: #b7b2ef;
-        }
-
-        #change:hover{
-            background-color: #b7b2ef;
-        }
-
-        #capitalchoosen{
-            position: fixed;
+        h1{
             font-size: 50pt;
             font-weight: bolder;
             color: #0d0730;
@@ -162,13 +160,11 @@
         }
 
         .flags {
-            position: absolute;
-            bottom: 15%;
             display: flex;
         }
 
         .flag {
-            width: 150px;
+            width: 180px;
         }
 
         .click {
@@ -215,26 +211,31 @@
                 </ul>
             </div>
         </div>
-        <h1 id="capitalchoosen">Beijing</h1>
-        <div class="flags">
-            <button onclick="check0()" class="click" id="0" name="abc"><img src="Moscow.png" class="flag" id="flag0"></button>
-            <button onclick="check1()" class="click" id="1" name="abc"><img src="New Delhi.png" class="flag" id="flag1"></button>
-            <button onclick="check2()" class="click" id="2" name="abc"><img src="Beijing.png" class="flag" id="flag2"></button>
+        <div>
+            <h1 id="flagchoosen">Senegal</h1>
+            <div class="flags">
+                <button onclick="check0()" class="click" id="0"><img src="Senegal1.png" class="flag" id="flag0"></button>
+                <button onclick="check1()" class="click" id="1"><img src="Tanzania1.png" class="flag" id="flag1"></button>
+                <button onclick="check2()" class="click" id="2"><img src="Uruguay1.png" class="flag" id="flag2"></button>
+            </div>
         </div>
         <div id="hide">
             <div class="intro">
                 <div id="dialoguebox">
                     <div class="container">
-                        <h3 class="welcome">Congratulations on completing the capitals guessing game!!🎉 your score is:</h3>
+                        <h3 class="welcome">Congratulations on completing the flag guessing game!!🎉 your score is:</h3>
                         <h2 id="score" ></h2>
                     </div>
-                    <button id="next"><a href="capitals.html"> Replay </a></button>
-                    <button id="change"><a href="game-page.html"> Change game </a></button>
+                    <div class="buttons">
+                        <button id="next"><a href="flags.html"> Replay </a></button>
+                        <button id="change"><a href="game-page.html"> Change game </a></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
+        var som=0;
         var menuu=document.getElementById('navbar');
         function menu(){
             if (menuu.style.display === 'none') {
@@ -243,11 +244,11 @@
                 menuu.style.display = 'none';
             }
         }
-        var names=['Beijing','Madrid','Rabat','Jerusalem','Paris','Warsaw','London','Buenos Aires','Brussels','Ottawa','Rome','Hanoi','Berlin','New Delhi','Tehran','Doha','Tokyo','Monaco','Niamey','Moscow','Pretoria','Khartoum','Bern','Dodoma','Ankara','Abu Dhabi','Washington','Montevideo','Sana\'a','Dakar'];
+
+        var names=['Senegal','Morocco','Palestine','Qatar','Vietnam','Poland','United-kingdom','Argentina','Belgium','Canada','China','France','Germany','India','Iran','Italy','Japan','Monaco','Niger','Russia','South-africa','Sudan','Switzerland','Tanzania','Turkey','United-arab-emirates','United-states','Uruguay','Yemen'];
         var x=0;
         var L=names.length;
-        var t=0;
-        var som=0;
+        var t=0
 
         function next(){
             for(i=0;i<3;i++){
@@ -268,13 +269,13 @@
                 }
                 
                 
-                var choosenname = document.getElementById('capitalchoosen');
+                var choosenname = document.getElementById('flagchoosen');
                 var choosenflag = document.getElementById('flag' + y);
                 var f1=document.getElementById('flag'+n);
                 var f2=document.getElementById('flag'+o);
                 
                 choosenname.innerHTML = names[x];
-                choosenflag.src = names[x] + '.png';
+                choosenflag.src = names[x] + '1.png';
                 
                 
                 var r=Math.floor(Math.random()*L/2);
@@ -293,15 +294,15 @@
                     } else { m=r*2; }
                 }
                 
-                f1.src= names[r] + '.png';
-                f2.src= names[m] + '.png';
+                f1.src= names[r] + '1.png';
+                f2.src= names[m] + '1.png';
                 t=t+1;
             }
             if(t==10){
                 var blok=document.getElementById('hide');
                 blok.style.display='block';
                 var score=document.getElementById('score');
-                var sco=som+'/10';
+                sco=som+'/10';
                 sco=sco.toString();
                 score.innerHTML=sco;
             }
